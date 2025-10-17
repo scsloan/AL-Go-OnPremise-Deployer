@@ -29,7 +29,7 @@
 ## 📥 Installation
 1. **Using the Workflow File:**
     - Download and place the [OnPremiseDeployer.yaml](https://github.com/akoniecki/AL-Go-OnPremise-Deployer/blob/main/.github/workflows/OnPremiseDeployer.yaml) file in the `.github/workflows` directory of your AL-Go repository.
-    - Ensure you have a valid `ghWorkflowToken` secret set up in your AL-Go repository. See [AL-Go docs](https://github.com/microsoft/AL-Go/blob/main/Scenarios/UpdateAlGoSystemFiles.md) for more information.
+    - Ensure you have a valid `GhTokenWorkflow` secret set up in your AL-Go repository. See [AL-Go docs](https://github.com/microsoft/AL-Go/blob/main/Scenarios/UpdateAlGoSystemFiles.md) for more information.
     - Run the "Install or Update AL-Go OnPremise Deployer" workflow in GitHub Actions.
 
 2. **Using the Repository Template:**
