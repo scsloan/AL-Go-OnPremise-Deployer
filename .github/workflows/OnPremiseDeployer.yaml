@@ -71,8 +71,9 @@ jobs:
           $alGoActionsPath = Get-ChildItem -Path $helperBasePath -Directory | Sort-Object Name -Descending | Select-Object -First 1
           if ($null -eq $alGoActionsPath) { throw "AL-Go-Actions directory not found." }
           . (Join-Path -Path $alGoActionsPath.FullName -ChildPath "AL-Go-Helper.ps1" -Resolve)
-          Invoke-Expression -Command (Invoke-WebRequest -Uri "https://raw.githubusercontent.com/microsoft/AL-Go-Actions/main/CheckForUpdates/yamlclass.ps1").Content
-    
+          $yamlClassScript = Invoke-WebRequest -Uri "https://raw.githubusercontent.com/microsoft/AL-Go-Actions/main/CheckForUpdates/yamlclass.ps1" -UseBasicParsing
+          Invoke-Expression -Command ($yamlClassScript).Content
+          
           # Validate token
           $ReadSecretsOutputJson = '${{ steps.ReadSecrets.outputs.Secrets }}'
           $ReadSecretsOutput = $ReadSecretsOutputJson | ConvertFrom-Json
